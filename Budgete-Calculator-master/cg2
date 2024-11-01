@@ -1,0 +1,150 @@
+// Chesta Mittal 18JE0246 : House and car
+
+#include <bits/stdc++.h>
+#include <GL/glut.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+void init() {
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+}
+
+void draw_hut() {
+    // Yellow Base
+    glBegin(GL_POLYGON);
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glVertex2f(0.4f, 0.2f);
+    glVertex2f(0.7f, 0.35f);
+    glVertex2f(0.7f, 0.5f);
+    glVertex2f(0.4f, 0.45f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glVertex2f(0.2f, 0.2f);
+    glVertex2f(0.4f, 0.2f);
+    glVertex2f(0.4f, 0.45f);
+    glVertex2f(0.2f, 0.45f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glColor3f(1.0f, 1.0f, 0.0f);
+    glVertex2f(0.2f, 0.45f);
+    glVertex2f(0.4f, 0.45f);
+    glVertex2f(0.3f, 0.6f);
+    glEnd();
+
+    // blue doors and roof
+    glBegin(GL_QUADS);
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glVertex2f(0.4f, 0.45f);
+    glVertex2f(0.7f, 0.5f);
+    glVertex2f(0.6f, 0.57f);
+    glVertex2f(0.3f, 0.6f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.0f, 0.0f, 1.0f);
+    glVertex2f(0.25f, 0.2f);
+    glVertex2f(0.35f, 0.2f);
+    glVertex2f(0.35f, 0.35f);
+    glVertex2f(0.25f, 0.35f);
+    glEnd();
+}
+
+void draw_road() {
+    glBegin(GL_QUADS);
+    glColor3f(0.4f, 0.4f, 0.4f);
+    glVertex2f(-1.0f, -0.35f);
+    glVertex2f(1.1f, -0.35f);
+    glVertex2f(1.1f, 0.1f);
+    glVertex2f(-1.0f, 0.1f);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glVertex2f(-1.0f, -0.15f);
+    glVertex2f(1.1f, -0.15f);
+    glEnd();
+}
+
+void draw_car() {
+
+    // body
+    glBegin(GL_QUADS);
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glVertex2f(-0.5f, -0.25f);
+    glVertex2f(0.2f, -0.25f);
+    glVertex2f(0.2f, -0.1f);
+    glVertex2f(-0.5f, -0.1f);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glVertex2f(-0.35f, -0.1f);
+    glVertex2f(0.05f, -0.1f);
+    glVertex2f(0.0f, 0.0f);
+    glVertex2f(-0.3f, 0.0f);
+    glEnd();
+    
+    
+    // tyre
+    glBegin(GL_POLYGON);
+    float xc = -0.35, yc = -0.25;
+    glColor3f(1.0f, 0.0f, 1.0f);
+    for (float i = 0; i < 360; i = i + 2.0) {
+        float x = xc + 0.08 * cos((i * 2 * 3.14) / 360);
+        float y = yc + 0.08 * sin((i * 2 * 3.14) / 360);
+        glVertex2f(x, y);
+    }
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    xc = 0.05, yc = -0.25;
+    glColor3f(1.0f, 0.0f, 1.0f);
+    for (float i = 0; i < 360; i = i + 2.0) {
+        float x = xc + 0.08 * cos((i * 2 * 3.14) / 360);
+        float y = yc + 0.08 * sin((i * 2 * 3.14) / 360);
+        glVertex2f(x, y);
+    }
+    glEnd();
+    
+    
+    // windows
+    glBegin(GL_QUADS);
+    glColor3f(0.75f, 0.85f, 0.84f);
+    glVertex2f(-0.33f, -0.09f);
+    glVertex2f(-0.13f, -0.09f);
+    glVertex2f(-0.13f, -0.01f);
+    glVertex2f(-0.29f, -0.01f);
+    glEnd();
+
+    glBegin(GL_QUADS);
+    glColor3f(0.75f, 0.85f, 0.84f);
+    glVertex2f(-0.11f, -0.09f);
+    glVertex2f(0.03f, -0.09f);
+    glVertex2f(-0.01f, -0.01f);
+    glVertex2f(-0.11f, -0.01f);
+    glEnd();
+}
+
+void display(void) {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    draw_hut();
+    draw_road();
+    draw_car();
+
+    glFlush();
+}
+
+int main(int argc, char **argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowSize(600, 600);
+    glutInitWindowPosition(50, 50);
+    glutCreateWindow("square");
+    glutDisplayFunc(display);
+    init();
+    glutMainLoop();
+    return 0;
+}
