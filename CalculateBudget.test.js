@@ -1,6 +1,5 @@
 // calculateBudget.test.js
-const { calculateBudget, data } = require('./script.js');  // Make sure the path is correct
-
+const { calculateTotal, calculateBudget, data } = require('./script.js'); 
 describe('calculateBudget function', () => {
     beforeEach(() => {
         // Reset the data properties before each test
@@ -51,3 +50,4 @@ describe('calculateBudget function', () => {
 
     
 });
+

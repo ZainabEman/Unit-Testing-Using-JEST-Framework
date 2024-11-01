@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730452966163" clover="3.2.0">
-  <project timestamp="1730452966163" name="All files">
-    <metrics statements="30" coveredstatements="6" conditionals="12" coveredconditionals="2" methods="3" coveredmethods="1" elements="45" coveredelements="9" complexity="0" loc="30" ncloc="30" packages="1" files="1" classes="1"/>
+<coverage generated="1730447400631" clover="3.2.0">
+  <project timestamp="1730447400631" name="All files">
+    <metrics statements="33" coveredstatements="33" conditionals="14" coveredconditionals="13" methods="8" coveredmethods="8" elements="55" coveredelements="54" complexity="0" loc="33" ncloc="33" packages="1" files="2" classes="2"/>
     <file name="script.js" path="C:\Users\Admin\Downloads\SQE\script.js">
-      <metrics statements="30" coveredstatements="6" conditionals="12" coveredconditionals="2" methods="3" coveredmethods="1"/>
-      <line num="3" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="4" count="0" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="14" count="0" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="22" count="0" type="stmt"/>
-      <line num="23" count="0" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
-      <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="28" count="0" type="stmt"/>
-      <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="36" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="37" count="0" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="39" count="0" type="stmt"/>
-      <line num="41" count="0" type="stmt"/>
-      <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="46" count="0" type="stmt"/>
-      <line num="47" count="0" type="stmt"/>
-      <line num="49" count="0" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
+      <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="5" methods="7" coveredmethods="7"/>
+      <line num="5" count="31" type="stmt"/>
+      <line num="6" count="31" type="stmt"/>
+      <line num="7" count="29" type="stmt"/>
+      <line num="9" count="31" type="stmt"/>
+      <line num="13" count="11" type="stmt"/>
+      <line num="14" count="11" type="stmt"/>
+      <line num="15" count="11" type="stmt"/>
+      <line num="16" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="10" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="38" count="2" type="stmt"/>
+      <line num="39" count="6" type="stmt"/>
+      <line num="48" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="49" count="8" type="stmt"/>
+      <line num="50" count="8" type="stmt"/>
+      <line num="53" count="1" type="stmt"/>
       <line num="54" count="1" type="stmt"/>
+      <line num="57" count="1" type="stmt"/>
+      <line num="58" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="60" count="1" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="64" count="2" type="stmt"/>
+    </file>
+    <file name="validateInput.js" path="C:\Users\Admin\Downloads\SQE\validateInput.js">
+      <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
+      <line num="2" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="10" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="15" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

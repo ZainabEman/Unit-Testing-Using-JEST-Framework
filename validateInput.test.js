@@ -66,3 +66,29 @@ describe('validateInput', () => {
 
   
 });
+
+const xlsx = require('xlsx');
+
+describe('validateInput Function with ECP values from Excel', () => {
+    // Load data from the Excel file
+    const workbook = xlsx.readFile('inputTestCases.xlsx'); // Make sure this file is in the same directory
+    const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+    const rows = xlsx.utils.sheet_to_json(worksheet);
+
+    // Iterate over each row and run the test
+    rows.forEach((row, index) => {
+        test(`validateInput Test Case ${index + 1}`, () => {
+            const { InputAmount, ExpectedIsValid, ExpectedError, ExpectedValue } = row;
+
+            const result = validateInput(InputAmount);
+
+            expect(result.isValid).toBe(ExpectedIsValid);
+
+            if (ExpectedIsValid) {
+                expect(result.value).toBe(ExpectedValue);
+            } else {
+                expect(result.error).toBe(ExpectedError);
+            }
+        });
+    });
+});

@@ -1,5 +1,6 @@
 module.exports = {
-    // other Jest configuration options
+    // Set the maximum number of worker processes to use. For example, 4 workers:
+    maxWorkers: 4,
     reporters: [
       "default", // keep the default reporter for console output
       ["jest-html-reporter", {
