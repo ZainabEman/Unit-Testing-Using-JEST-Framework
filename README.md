@@ -44,7 +44,7 @@ Follow the steps below to get the project set up on your local machine.
 
 1. **Clone the repository**:
    ```bash
-   git clone YOUR_GITHUB_REPO_URL
+   git clone [Unit testing Using JEST](https://github.com/ZainabEman/Unit-Testing-Using-JEST-Framework.git)
    cd jest-docker-setup
 ## Run the Docker Container
 
