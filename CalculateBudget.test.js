@@ -97,3 +97,32 @@ describe('calculateBudget function', () => {
     
 });
 
+
+//data driven test case
+
+const XLSX = require('xlsx');
+function setupData(expenses, income) {
+    data.allItems.exp = expenses.map(value => ({ value }));
+    data.allItems.inc = income.map(value => ({ value }));
+    data.totals.exp = 0;
+    data.totals.inc = 0;
+}
+
+describe('calculateBudget Data-Driven Tests', () => {
+    let workbook = XLSX.readFile('inputTestCases.xlsx');
+    let worksheet = workbook.Sheets[workbook.SheetNames[1]];
+    let jsonData = XLSX.utils.sheet_to_json(worksheet);
+
+    jsonData.forEach(testCase => {
+        test(`Test Case ${testCase['Test Case ID']}: Expenses = ${testCase.Expenses}, Income = ${testCase.Income}`, () => {
+            setupData([testCase.Expenses], [testCase.Income]);
+            calculateTotal('exp');
+            calculateTotal('inc');
+            calculateBudget();
+            expect(data.budget).toBe(testCase['Expected Budget']);
+            expect(data.percentage).toBe(testCase['Expected Percentage']);
+        });
+    });
+});
+
+
