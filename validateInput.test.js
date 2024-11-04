@@ -64,6 +64,78 @@ describe('validateInput', () => {
       });
   });
 
+  test('should return valid result for integer input as string', () => {
+    const result = validateInput("100");
+    expect(result).toEqual({
+        isValid: true,
+        value: 100
+    });
+});
+
+// Test case for valid integer number
+test('should return valid result for integer input as number', () => {
+    const result = validateInput(100);
+    expect(result).toEqual({
+        isValid: true,
+        value: 100
+    });
+});
+
+// Test case for negative integer input
+test('should return valid result for negative integer input', () => {
+    const result = validateInput("-50");
+    expect(result).toEqual({
+        isValid: true,
+        value: -50
+    });
+});
+
+// Test case for positive float input
+test('should return error for non-integer (float) input', () => {
+    const result = validateInput("10.5");
+    expect(result).toEqual({
+        isValid: false,
+        error: "Please enter a whole number."
+    });
+});
+
+// Test case for negative float input
+test('should return error for non-integer (negative float) input', () => {
+    const result = validateInput("-20.7");
+    expect(result).toEqual({
+        isValid: false,
+        error: "Please enter a whole number."
+    });
+});
+
+// Test case for non-numeric string input
+test('should return error for non-numeric input', () => {
+    const result = validateInput("abc");
+    expect(result).toEqual({
+        isValid: false,
+        error: "Invalid input format."
+    });
+});
+
+// Test case for alphanumeric input
+test('should return error for alphanumeric input', () => {
+    const result = validateInput("123abc");
+    expect(result).toEqual({
+        isValid: false,
+        error: "Invalid input format."
+    });
+});
+
+// Test case for special characters
+test('should return error for special characters input', () => {
+    const result = validateInput("!@#$%");
+    expect(result).toEqual({
+        isValid: false,
+        error: "Invalid input format."
+    });
+});
+
+
   
 });
 
